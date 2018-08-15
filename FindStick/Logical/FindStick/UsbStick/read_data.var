@@ -1,0 +1,42 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: read_data
+ * File: read_data.var
+ * Author: Bernecker & Rainer
+ * Created: April 20, 2009
+ ********************************************************************
+ * Local variables of program read_data
+ ********************************************************************)
+VAR CONSTANT
+	CREATE_NODE_ID_LIST : USINT := 2; (*Function step: Create a list of Node-IDs from all active USB devices*)
+	READ_DEVICE_DATA : USINT := 3; (*Function step: Read out the specific data from the Node-IDs*)
+	GET_DESCRIPTOR : USINT := 4; (*Function step: Read out the descriptor data from the Node-IDs*)
+	CREATE_FILE_DEVICE : USINT := 5; (*Function step: Create file out of data from USB device*)
+	DIRECTORY_READ : USINT := 7; (*Function step: Read out to data from linked File Device*)
+	UNLINK_DEVICE : USINT := 9; (*Function step: Unlink the File Device from specific path*)
+	FINISH : USINT := 8; (*Function step: Function chain is finished - back to WAIT*)
+	WAIT : USINT := 0; (*Function step: Wait for starting the Function chain*)
+	DIRECTORY_INFO : USINT := 6; (*Function step: Read out the Info about the connected File Device*)
+	ERROR_CASE : USINT := 1; (*Function step: Jump to this step in every case of Error occuring in the Function chain*)
+END_VAR
+VAR
+	device_data : fiDIR_READ_DATA := (0); (*Buffer to store device data*)
+	device_descriptor : ARRAY[0..4] OF usbDeviceDescr_typ; (*Buffer to store descriptor data of device*)
+	usb_data_buffer : ARRAY[0..4] OF usbNode_typ; (*Defined data_typ of AsUSB - Library*)
+	node_id_buffer : ARRAY[0..4] OF UDINT; (*Different nodeIDs saved in array-elements*)
+	UsbNodeListGet_0 : UsbNodeListGet; (*Type of FUB UsbNodeListGet*)
+	step : USINT; (*Determines the Function step*)
+	UsbNodeGet_0 : UsbNodeGet; (*Type of FUB UsbNodeGet*)
+	start_reading_usb_data : BOOL; (*If TRUE - Function chain gets started*)
+	node : USINT; (*Node number*)
+	DevLink_0 : DevLink; (*Type of FUB DevLink*)
+	UsbDescriptorGet_0 : UsbDescriptorGet; (*Type of FUB UsbDescriptorGet*)
+	device_name : STRING[80]; (*Name of the USB device - optional *)
+	device_param : STRING[80]; (*Connection path of USB device*)
+	DirInfo_0 : DirInfo; (*Type of FUB DirInfo*)
+	DirRead_0 : DirRead; (*Type of FUB DirRead*)
+	DevUnlink_0 : DevUnlink; (*Type of FUB DevUnlink*)
+	errorStep : USINT;
+	tonSearchUSBStick : TON;
+END_VAR

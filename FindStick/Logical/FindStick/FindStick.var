@@ -1,0 +1,3 @@
+VAR
+	g_usbStickConnected : BOOL := FALSE;
+END_VAR
