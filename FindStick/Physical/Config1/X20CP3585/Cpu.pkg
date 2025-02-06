@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.3.7.46 SP?>
+<?AutomationStudio FileVersion="4.9"?>
 <Cpu xmlns="http://br-automation.co.at/AS/Cpu">
   <Objects>
     <Object Type="File" Description="Software Konfiguration">Cpu.sw</Object>
@@ -17,10 +17,10 @@
     <Object Type="Package">mappCockpit</Object>
   </Objects>
   <Configuration ModuleId="X20CP3585">
-    <AutomationRuntime Version="H4.34" />
+    <AutomationRuntime Version="M4.93" />
     <Build GccVersion="4.1.2" />
     <DefaultTargetMemory Tasks="UserROM" />
-    <Vc />
+    <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
     <OnlineConfiguration Name="X20CP3585" DeviceType="TCPIP" DeviceParameters="/IF=tcpip /LOPO=11159 /SA=113" ConnectionParameters="/RT=1000 /AM=* /SDT=5 /DAIP=192.168.0.10 /REPO=11159 /ANSL=1 /PT=11169" Description="" />
   </Configuration>
 </Cpu>
