@@ -4,7 +4,11 @@
 # FindUsbStickOnBAndRPlc
 B&amp;R Automation Studio : Auto mount USB Stick connected to a B&amp;R PLC and use it as file device for FileIO - Library.
 
-What is this about ?
+## License
+
+This software published under [MIT license](LICENSE). Also have a look into the [disclaimer](Disclaimer.md).
+
+## What is this about ?
 
 You cannot assign a fixed [file device](https://help.br-automation.com/#/en/4/libraries%2Ffileio%2Fgen%2Ffiledevice.html) to a USB stick in Automation Runtime. This would not even make sense, as the USB stick can be removed at any time or plugged in anywhere in the USB network.
 
